@@ -1,0 +1,90 @@
+[
+  {
+    "id": 0,
+    "url": "../assets/promotional_products/promo1.png",
+    "name": "sorti",
+    "volume": "450 мл",
+    "barcode": "4604049097548",
+    "creator": "Нэфис",
+    "brand": "AOS",
+    "description": "AOS Ср-во для мытья посуды Апельсин+мята",
+    "price": 48.76
+  },
+  {
+    "id": 1,
+    "url": "../assets/promotional_products/promo2.png",
+    "name": "aos",
+    "volume": "450 мл",
+    "barcode": "4604049097548",
+    "creator": "Нэфис",
+    "brand": "AOS",
+    "description": "AOS средство для мытья посуды Crystal",
+    "price": 458.76
+  },
+  {
+    "id": 2,
+    "url": "../assets/promotional_products/promo3.png",
+    "name": "ariel",
+    "volume": "15X28.8 г",
+    "barcode": "4604049097548",
+    "creator": "Нэфис",
+    "brand": "AOS",
+    "description": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    "price": 622.76
+  },
+  {
+    "id": 3,
+    "url": "../assets/promotional_products/promo4.png",
+    "name": "bimax",
+    "volume": "1500 г",
+    "barcode": "4604049097548",
+    "creator": "Нэфис",
+    "brand": "AOS",
+    "description": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
+    "price": 8394.76
+  },
+  {
+    "id": 4,
+    "url": "../assets/promotional_products/product1.png",
+    "name": "vichy",
+    "volume": "50 мл",
+    "barcode": "100126212",
+    "creator": "Золотое яблоко",
+    "brand": "Vichy",
+    "description": "Vichy 48 часов защиты дезодорант-антиперспирант 50 мл",
+    "price": 7080
+  },
+  {
+    "id": 5,
+    "url": "../assets/promotional_products/product2.png",
+    "name": "aravia",
+    "volume": "300 мл",
+    "barcode": "4793998",
+    "creator": "Aravia Professional",
+    "brand": "Aravia",
+    "description": "ARAVIA Professional Крем-парафин 'Сливочный шоколад' с маслом какао, витамином F",
+    "price": 2813.94
+  },
+  {
+    "id": 6,
+    "url": "../assets/promotional_products/product3.png",
+    "name": "Зеленая Дубрава",
+    "volume": "150 мл",
+    "barcode": "3685953",
+    "creator": "Теймурова",
+    "brand": "Зеленая Дубрава",
+    "description": "Зеленая Дубрава Спрей для ног Теймурова от запаха и пота Чайное дерево, 150 мл, 150 г",
+    "price": 868.5
+  },
+  {
+    "id": 7,
+    "url": "../assets/promotional_products/product4.png",
+    "name": "limoni",
+    "volume": "50 мл",
+    "barcode": "3614085",
+    "creator": "Collagen Booster",
+    "brand": "Limoni",
+    "description": "Limoni / Лифтинг крем для лица с коллагеном",
+    "price": 9049.77
+  }
+]
