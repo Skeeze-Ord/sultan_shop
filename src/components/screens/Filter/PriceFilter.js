@@ -55,7 +55,9 @@ const PriceFilter = () => {
             placeholder={Math.floor(maxPrice) + 1}
           />
         </div>
-        <p onClick={() => Show()}>Test</p>
+        <p className="cursor-pointer" onClick={() => Show()}>
+          Test
+        </p>
       </div>
 
       <div>

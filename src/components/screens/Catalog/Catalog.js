@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import SortComponent from "./SortComponent.js";
 import productData from "../../../data.json";
 
 const Catalog = () => {
   let items = productData;
-  
+
   return (
     <div>
       <div>
-        {/* <a href={require(`../Home/Home.js`)}>Главная</a> /{" "} */}
         <a href={""}>Каталог</a>
       </div>
       <h1>КОСМЕТИКА И ГИГИЕНА</h1>
-      <div>
-        Сортировка: <SortComponent items={items} />
-      </div>
+      <div>Сортировка:</div>
       <ul>
         <li>Уход за телом</li>
         <li>Уход за руками</li>

@@ -1,9 +1,13 @@
 import React from "react";
 import "../../../index.css";
+import Header from "./Header";
+import Promo from "./Promo";
+import Categories from "./Categories";
 
 const Main = () => {
   return (
     <div>
+      <Header />
       <div className="main text-white">
         <div className="pb-24">
           <div className="text-5xl w-96 ml-28 pt-24">
@@ -35,6 +39,8 @@ const Main = () => {
           </div>
         </div>
       </div>
+      <Promo />
+      <Categories />
     </div>
   );
 };

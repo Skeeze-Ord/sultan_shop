@@ -1,11 +1,9 @@
 import React from "react";
 import "../../../index.css";
+import { GetCount } from "../DataBase/GetCount";
+import { GetSumAmount } from "../DataBase/GetSumAmount";
 
 const Header = () => {
-  let itemsCount = 0;
-  let amount = 12487;
-  amount = amount.toLocaleString();
-
   return (
     <div>
       <div className="flex justify-center items-center text-sm">
@@ -51,7 +49,7 @@ const Header = () => {
                 alt="logo"
                 src={require(`../../../assets/icons/sultanIcon.png`)}
               />
-              <span className="tracking-widest font-serif font-bold">
+              <span className="tracking-widest font-serif font-bold pl-2">
                 СУЛТАН
               </span>
             </div>
@@ -81,7 +79,13 @@ const Header = () => {
                 <li className="float-right">+7 (777) 490-00-91</li>
                 <li className="text-gray-600">время работы: 9:00-20:00</li>
                 <li className="float-right underline text-gray-600 cursor-pointer">
-                  <a href="">Заказать звонок</a>
+                  <a
+                    href="https://wa.me/77774900091"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Заказать звонок
+                  </a>
                 </li>
               </ul>
             </div>
@@ -104,11 +108,11 @@ const Header = () => {
                 src={require("../../../assets/icons/cartIcon.png")}
                 alt="cart icon"
               ></img>
-              <span className="itemsCount">{itemsCount}</span>
+              <span className="itemsCount">{GetCount()}</span>{" "}
             </div>
             <div>
               <span>Корзина</span> <br />
-              <span id="amount">{amount}&#8376;</span>
+              <span id="amount">{GetSumAmount().toFixed(2)} &#8376;</span>
             </div>
           </li>
         </ul>

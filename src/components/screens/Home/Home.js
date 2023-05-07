@@ -1,19 +1,25 @@
 import React from "react";
-import Header from "./Header";
-import PriceFilter from "../Filter/PriceFilter";
 import Main from "./Main";
-import Promo from "./Promo";
-import Categories from "./Categories";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import CardProduct from "../CardProduct/CardProduct";
+import store from "../../../store/store";
+import { Provider } from "react-redux";
 
 const Home = () => {
   return (
-    <div>
-      <Header />
-      <Main />
-      <PriceFilter />
-      <Promo />
-      <Categories />
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="two" element={<CardProduct product={store} />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+    // <Header />
+    // <Main />
+    // <PriceFilter />
+    // <Promo />
+    // <Categories />
   );
 };
 
