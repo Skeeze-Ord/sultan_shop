@@ -23,13 +23,13 @@ li {
 
 .itemsCount {
   position: absolute;
+  top: -10px;
+  right: 5px;
   background-color: #ffc85e;
   border: 1px solid white;
   border-radius: 50%;
   padding: 0.1em 0.5em;
   color: white;
-  top: 70px;
-  right: 115px;
 }
 
 .cart {
@@ -39,6 +39,7 @@ li {
 .main {
   border: solid;
   position: relative;
+  box-sizing: border-box;
 }
 
 .main::before {
@@ -49,7 +50,10 @@ li {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url("./assets/main.png") fixed center;
+  background-image: url("./assets/main.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   filter: blur(6px);
 }
 
@@ -61,11 +65,4 @@ li {
 
 .produtcs {
   margin: 0 auto;
-}
-
-.popup {
-  margin: 0 25% 0 25%;
-  width: 60%;
-  border: 1px solid black;
-  align-items: center;
 }

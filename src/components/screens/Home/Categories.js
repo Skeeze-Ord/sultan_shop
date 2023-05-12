@@ -15,6 +15,7 @@ const Categories = () => {
           <img
             className="w-52 h-48"
             src={require("../../../assets/product_categories/cat1.png")}
+            alt="category 1"
           />
           <span>Бытовая химия</span>
         </div>
@@ -22,6 +23,7 @@ const Categories = () => {
           <img
             className="w-52 h-48"
             src={require("../../../assets/product_categories/cat2.png")}
+            alt="category 2"
           />
           <span>Косметика и гигиена</span>
         </div>
@@ -29,6 +31,7 @@ const Categories = () => {
           <img
             className="w-52 h-48"
             src={require("../../../assets/product_categories/cat3.png")}
+            alt="category 3"
           />
           <span>Товары для дома</span>
         </div>
@@ -36,6 +39,7 @@ const Categories = () => {
           <img
             className="w-52 h-48"
             src={require("../../../assets/product_categories/cat4.png")}
+            alt="category 4"
           />
           <span>Товары для детей и мам</span>
         </div>
@@ -43,6 +47,7 @@ const Categories = () => {
           <img
             className="w-52 h-48"
             src={require("../../../assets/product_categories/cat5.png")}
+            alt="category 5"
           />
           <span>Посуда</span>
         </div>

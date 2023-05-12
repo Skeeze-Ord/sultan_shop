@@ -2,6 +2,7 @@ import React from "react";
 import "../../../index.css";
 import { GetCount } from "../DataBase/GetCount";
 import { GetSumAmount } from "../DataBase/GetSumAmount";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -38,9 +39,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-
       <hr />
-
       <div className="pb-4 pt-2 text-sm">
         <ul className="flex items-center w-max">
           <li>
@@ -94,27 +93,27 @@ const Header = () => {
             </div>
           </li>
           <li className="flex rounded-3xl p-3 text-white px-14 bg-amber-400 items-center cursor-pointer">
-            Прайс-лист{" "}
+            Прайс-лист
             <img
               className="pl-1"
               src={require(`../../../assets/icons/downloadIcon.png`)}
               alt="download button icon"
             ></img>
           </li>
-          <li className="flex items-center">
-            <div>
+          <Link to="/cart" className="flex items-center pl-5">
+            <div className="relative">
               <img
-                className="cart"
+                className="cart flex-auto"
                 src={require("../../../assets/icons/cartIcon.png")}
                 alt="cart icon"
               ></img>
-              <span className="itemsCount">{GetCount()}</span>{" "}
+              <span className="itemsCount flex-auto">{GetCount()}</span>{" "}
             </div>
             <div>
               <span>Корзина</span> <br />
-              <span id="amount">{GetSumAmount().toFixed(2)} &#8376;</span>
+              <span>{GetSumAmount().toFixed(2)} &#8376;</span>
             </div>
-          </li>
+          </Link>
         </ul>
       </div>
     </div>

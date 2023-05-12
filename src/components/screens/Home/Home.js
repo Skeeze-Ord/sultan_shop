@@ -1,25 +1,16 @@
 import React from "react";
 import Main from "./Main";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import CardProduct from "../CardProduct/CardProduct";
-import store from "../../../store/store";
-import { Provider } from "react-redux";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from "../../Cart/Cart";
 
 const Home = () => {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="two" element={<CardProduct product={store} />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
-    // <Header />
-    // <Main />
-    // <PriceFilter />
-    // <Promo />
-    // <Categories />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

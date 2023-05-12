@@ -26,6 +26,7 @@ const PriceFilter = () => {
       endPriceValue = Number(endPrice.value);
     }
 
+    console.log("Filtered products by price");
     for (let i = 0; i < data.length; i++) {
       if (data[i].price > startPriceValue && data[i].price < endPriceValue) {
         console.log(data[i].name);

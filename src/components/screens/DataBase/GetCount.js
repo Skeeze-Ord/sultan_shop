@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ConnectToDb } from "./ConnectionToDB";
 
 export const GetCount = () => {
   const [keyCount, setKeyCount] = useState(0);
@@ -11,18 +12,14 @@ export const GetCount = () => {
     };
 
     request.onsuccess = (event) => {
-      const db = event.target.result;
-      const transaction = db.transaction("productObjectStore", "readonly");
-      const objectStore = transaction.objectStore("productObjectStore");
-
-      const countRequest = objectStore.count();
+      const countRequest = ConnectToDb(event).count();
 
       countRequest.onsuccess = (event) => {
         setKeyCount(event.target.result);
       };
 
       countRequest.onerror = () => {
-        console.log("Failed to count keys in database");
+        console.log("Failed to count of keys in database");
       };
     };
   }, []);

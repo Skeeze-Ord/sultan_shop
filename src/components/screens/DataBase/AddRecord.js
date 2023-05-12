@@ -1,3 +1,5 @@
+import { ConnectToDb } from "./ConnectionToDB";
+
 export const AddRecord = (note) => {
   const request = indexedDB.open("LocalDataBase", 1);
 
@@ -11,12 +13,7 @@ export const AddRecord = (note) => {
   };
 
   request.onsuccess = (event) => {
-    const db = event.target.result;
-
-    const transaction = db.transaction("productObjectStore", "readwrite");
-    const objectStore = transaction.objectStore("productObjectStore");
-
-    const request = objectStore.add({ note });
+    const request = ConnectToDb(event).add({ note });
 
     request.onsuccess = () => {
       console.log("Record added successfully");

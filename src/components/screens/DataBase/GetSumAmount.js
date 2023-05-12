@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ConnectToDb } from "./ConnectionToDB";
 
 export const GetSumAmount = () => {
   const [totalAmount, setTotalAmount] = useState(0);
@@ -9,7 +10,6 @@ export const GetSumAmount = () => {
     request.onupgradeneeded = (event) => {
       const db = event.target.result;
 
-      // Создание объектного хранилища и индекса
       const store = db.createObjectStore("productObjectStore", {
         keyPath: "id",
         autoIncrement: true,
@@ -22,21 +22,14 @@ export const GetSumAmount = () => {
     };
 
     request.onsuccess = (event) => {
-      const db = event.target.result;
-
-      const transaction = db.transaction("productObjectStore", "readonly");
-      const store = transaction.objectStore("productObjectStore");
-      const getAllRequest = store.getAll();
+      const getAllRequest = ConnectToDb(event).getAll();
 
       getAllRequest.onsuccess = () => {
         const data = getAllRequest.result;
 
         if (data && data.length) {
           const totalPrice = data.reduce((acc, obj) => acc + obj.note.price, 0);
-          console.log(totalPrice);
           setTotalAmount(totalPrice);
-        } else {
-          console.log("No data in the database");
         }
       };
 
