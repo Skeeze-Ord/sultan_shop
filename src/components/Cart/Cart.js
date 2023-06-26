@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ConnectToDb } from "../screens/DataBase/ConnectionToDB";
+import { DBProduct } from "../screens/DataBase/DBProduct";
 import Header from "../screens/Home/Header";
 import { Link } from "react-router-dom";
 
@@ -7,12 +7,10 @@ export const Cart = () => {
   const [productsInCart, setProductsInCart] = useState([]);
 
   useEffect(() => {
-    const request = indexedDB.open("LocalDataBase", 1);
+    const request = indexedDB.open("LocalDataBase", 2);
 
     request.onsuccess = (event) => {
-      const showAllRequest = ConnectToDb(event).getAll(
-        IDBKeyRange.lowerBound(0)
-      );
+      const showAllRequest = DBProduct(event).getAll(IDBKeyRange.lowerBound(0));
 
       showAllRequest.onsuccess = (event) => {
         const products = event.target.result;
@@ -35,7 +33,6 @@ export const Cart = () => {
             count: counts[product.name],
           };
         });
-
         setProductsInCart(productsWithCount);
       };
       event.target.result.close();
@@ -43,9 +40,10 @@ export const Cart = () => {
   }, []);
 
   const handleDeleteClick = (productId) => {
-    const request = indexedDB.open("LocalDataBase", 1);
+    const request = indexedDB.open("LocalDataBase", 2);
+
     request.onsuccess = (event) => {
-      const deleteRequest = ConnectToDb(event).delete(productId);
+      const deleteRequest = DBProduct(event).delete(productId);
 
       deleteRequest.onsuccess = () => {
         setProductsInCart((prevProducts) =>
@@ -54,9 +52,19 @@ export const Cart = () => {
       };
 
       deleteRequest.onerror = () => {
-        console.log("Failed to delete product with id", productId);
+        console.log("Failed to delete product with id ", productId);
       };
     };
+  };
+
+  const totalInfo = () => {
+    let totalCount = 0;
+    let totalSum = 0;
+    productsInCart.map((element) => {
+      totalCount += element.count;
+      totalSum += element.price * element.count;
+    });
+    return [totalCount, totalSum];
   };
 
   return (
@@ -101,13 +109,13 @@ export const Cart = () => {
                         {product.name}
                       </td>
                       <td className="py-3 px-4 text-sm font-medium text-gray-900">
-                        {product.price} руб.
+                        {product.price.toFixed(2)} &#8376;
                       </td>
                       <td className="py-3 px-4 text-sm font-medium text-gray-900">
                         {product.count} шт.
                       </td>
                       <td className="py-3 px-4 text-sm font-medium text-gray-900">
-                        {product.price * product.count} руб.
+                        {(product.price * product.count).toFixed(2)} &#8376;
                       </td>
                       <td>
                         <button className="inline-flex items-center justify-center rounded-full p-1 transition-colors duration-300 hover:bg-red-500 hover:text-white">
@@ -123,8 +131,11 @@ export const Cart = () => {
                   ))}
                 </tbody>
               </table>
-              <span>Всего товаров в корзине: </span>
-              {productsInCart.length}
+              <div className="pt-4">
+                Всего товаров в корзине: {totalInfo()[0]} <br />
+                На общую сумму: {totalInfo()[1].toLocaleString()}
+                &#8376;
+              </div>
             </div>
           </>
         ) : (

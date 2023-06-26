@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { ConnectToDb } from "./ConnectionToDB";
+import { DBProduct } from "./DBProduct";
 
 export const GetSumAmount = () => {
   const [totalAmount, setTotalAmount] = useState(0);
 
   useEffect(() => {
-    const request = indexedDB.open("LocalDataBase", 1);
+    const request = indexedDB.open("LocalDataBase", 2);
 
     request.onupgradeneeded = (event) => {
       const db = event.target.result;
@@ -22,7 +22,7 @@ export const GetSumAmount = () => {
     };
 
     request.onsuccess = (event) => {
-      const getAllRequest = ConnectToDb(event).getAll();
+      const getAllRequest = DBProduct(event).getAll();
 
       getAllRequest.onsuccess = () => {
         const data = getAllRequest.result;

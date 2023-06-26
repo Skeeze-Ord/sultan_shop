@@ -3,12 +3,13 @@ import "../../../index.css";
 import { GetCount } from "../DataBase/GetCount";
 import { GetSumAmount } from "../DataBase/GetSumAmount";
 import { Link } from "react-router-dom";
+import IsAuth from "../Authorization/IsAuth";
 
 const Header = () => {
   return (
     <div>
       <div className="flex justify-center items-center text-sm">
-        <div className="flex items-center">
+        <div className="flex h-14 items-center">
           <img
             className="w-4 h-4"
             src={require(`../../../assets/icons/gpsIcon.png`)}
@@ -30,34 +31,37 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="list">
-          <ul className="flex justify-evenly pl-16 text-gray-700">
-            <li>О компании</li>
-            <li>Доставка и оплата</li>
-            <li>Возврат</li>
-            <li>Контакты</li>
+        <div>
+          <ul className="flex justify-center pl-14 text-gray-700">
+            <li className="cursor-pointer">О компании</li>
+            <li className="cursor-pointer">Доставка и оплата</li>
+            <li className="cursor-pointer">Возврат</li>
+            <li className="cursor-pointer">Контакты</li>
           </ul>
+        </div>
+        <div className="pl-9">
+          <IsAuth isLoggedIn={localStorage.getItem("isLoggedIn")} />
         </div>
       </div>
       <hr />
-      <div className="pb-4 pt-2 text-sm">
+      <div className="flex justify-center pb-4 pt-2 text-sm">
         <ul className="flex items-center w-max">
           <li>
-            <div className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img
                 alt="logo"
                 src={require(`../../../assets/icons/sultanIcon.png`)}
               />
-              <span className="tracking-widest font-serif font-bold pl-2">
+              <span className="tracking-widest font-serif font-bold pl-2 pr-5">
                 СУЛТАН
               </span>
-            </div>
+            </Link>
           </li>
-          <li>
+          <Link to="/catalog">
             <span className="rounded-3xl p-3 text-white px-14 bg-amber-400 cursor-pointer">
               Каталог
             </span>
-          </li>
+          </Link>
           <li className="w-52">
             <div className="bg-gray-300 rounded-3xl p-1 w-52 flex items-center justify-between">
               <input
@@ -111,7 +115,7 @@ const Header = () => {
             </div>
             <div>
               <span>Корзина</span> <br />
-              <span>{GetSumAmount().toFixed(2)} &#8376;</span>
+              <span>{GetSumAmount().toLocaleString()} &#8376;</span>
             </div>
           </Link>
         </ul>

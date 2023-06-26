@@ -2,68 +2,78 @@
   {
     "id": 0,
     "url": "../assets/promotional_products/promo1.png",
-    "name": "sorti",
+    "name": "Sorti",
     "volume": "450 мл",
     "barcode": "4604049097548",
     "creator": "Нэфис",
     "brand": "AOS",
     "description": "AOS Ср-во для мытья посуды Апельсин+мята",
-    "price": 48.76
+    "price": 48.76,
+    "categories": ["household_chemicals", "household_products", "dishes"],
+    "promo": true
   },
   {
     "id": 1,
     "url": "../assets/promotional_products/promo2.png",
-    "name": "aos",
+    "name": "AOS",
     "volume": "450 мл",
     "barcode": "4604049097548",
     "creator": "Нэфис",
     "brand": "AOS",
     "description": "AOS средство для мытья посуды Crystal",
-    "price": 458.76
+    "price": 458.76,
+    "categories": ["household_chemicals", "household_products", "dishes"],
+    "promo": true
   },
   {
     "id": 2,
     "url": "../assets/promotional_products/promo3.png",
-    "name": "ariel",
+    "name": "Ariel",
     "volume": "15x28.8 г",
     "barcode": "4604049097548",
     "creator": "Нэфис",
     "brand": "AOS",
     "description": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
-    "price": 622.76
+    "price": 622.76,
+    "categories": ["household_chemicals", "household_products"],
+    "promo": true
   },
   {
     "id": 3,
     "url": "../assets/promotional_products/promo4.png",
-    "name": "bimax",
+    "name": "Bimax",
     "volume": "1500 г",
     "barcode": "4604049097548",
     "creator": "Нэфис",
     "brand": "AOS",
     "description": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
-    "price": 8394.76
+    "price": 8394.76,
+    "categories": ["household_chemicals", "household_products"],
+    "promo": true
   },
   {
     "id": 4,
     "url": "../assets/promotional_products/product1.png",
-    "name": "vichy",
+    "name": "Vichy",
     "volume": "50 мл",
     "barcode": "100126212",
     "creator": "Золотое яблоко",
     "brand": "Vichy",
     "description": "Vichy 48 часов защиты дезодорант-антиперспирант 50 мл",
-    "price": 7080
+    "price": 7080,
+    "categories": ["cosmetics_hygiene"]
   },
   {
     "id": 5,
     "url": "../assets/promotional_products/product2.png",
-    "name": "aravia",
+    "name": "Aravia Professional",
     "volume": "300 мл",
     "barcode": "4793998",
     "creator": "Aravia Professional",
     "brand": "Aravia",
     "description": "ARAVIA Professional Крем-парафин 'Сливочный шоколад' с маслом какао, витамином F",
-    "price": 2813.94
+    "price": 2813.94,
+    "categories": ["cosmetics_hygiene"]
   },
   {
     "id": 6,
@@ -74,17 +84,55 @@
     "creator": "Теймурова",
     "brand": "Зеленая Дубрава",
     "description": "Зеленая Дубрава Спрей для ног Теймурова от запаха и пота Чайное дерево, 150 мл, 150 г",
-    "price": 868.5
+    "price": 868.5,
+    "categories": ["cosmetics_hygiene"]
   },
   {
     "id": 7,
     "url": "../assets/promotional_products/product4.png",
-    "name": "limoni",
+    "name": "Limoni",
     "volume": "50 мл",
     "barcode": "3614085",
     "creator": "Collagen Booster",
     "brand": "Limoni",
     "description": "Limoni / Лифтинг крем для лица с коллагеном",
-    "price": 9049.77
+    "price": 9049.77,
+    "categories": ["cosmetics_hygiene"]
+  },
+  {
+    "id": 8,
+    "url": "../assets/promotional_products/product5.png",
+    "name": "Aravia Laboratories",
+    "volume": "150 мл",
+    "barcode": "102385629",
+    "creator": "Aravia Laboratories",
+    "brand": "Aravia",
+    "description": "ARAVIA Laboratories Soft Enzyme Powder энзимная пудра 150 мл",
+    "price": 6140,
+    "categories": ["cosmetics_hygiene"]
+  },
+  {
+    "id": 9,
+    "url": "../assets/promotional_products/product6.png",
+    "name": "Yokosun",
+    "volume": "120 шт",
+    "barcode": "100714380",
+    "creator": "Yokosun",
+    "brand": "Yokosun",
+    "description": "Влажные салфетки Yokosun Детские 120 шт",
+    "price": 1670,
+    "categories": ["cosmetics_hygiene", "childrens-moms", "household_products"]
+  },
+  {
+    "id": 10,
+    "url": "../assets/promotional_products/product7.png",
+    "name": "Ушастый нянь",
+    "volume": "300 мл",
+    "barcode": "100973184",
+    "creator": "Ушастый нянь",
+    "brand": "Невская косметика",
+    "description": "Ушастый нянь Крем-мыло Оливковое масло-алоэ вера 300 мл",
+    "price": 1216,
+    "categories": ["cosmetics_hygiene", "childrens-moms", "household_products"]
   }
 ]

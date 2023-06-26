@@ -1,7 +1,7 @@
-import { ConnectToDb } from "./ConnectionToDB";
+import { DBProduct } from "./DBProduct";
 
 export const AddRecord = (note) => {
-  const request = indexedDB.open("LocalDataBase", 1);
+  const request = indexedDB.open("LocalDataBase", 2);
 
   request.onupgradeneeded = (event) => {
     const db = event.target.result;
@@ -13,7 +13,8 @@ export const AddRecord = (note) => {
   };
 
   request.onsuccess = (event) => {
-    const request = ConnectToDb(event).add({ note });
+    const request = DBProduct(event).add({ note });
+    window.location.reload();
 
     request.onsuccess = () => {
       console.log("Record added successfully");

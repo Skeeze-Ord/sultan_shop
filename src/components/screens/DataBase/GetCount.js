@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
-import { ConnectToDb } from "./ConnectionToDB";
-
+import { DBProduct } from "./DBProduct";
 export const GetCount = () => {
   const [keyCount, setKeyCount] = useState(0);
 
   useEffect(() => {
-    const request = indexedDB.open("LocalDataBase", 1);
+    const request = indexedDB.open("LocalDataBase", 2);
 
     request.onerror = () => {
       console.log("Failed to open database");
     };
 
     request.onsuccess = (event) => {
-      const countRequest = ConnectToDb(event).count();
+      const countRequest = DBProduct(event).count();
 
       countRequest.onsuccess = (event) => {
         setKeyCount(event.target.result);
